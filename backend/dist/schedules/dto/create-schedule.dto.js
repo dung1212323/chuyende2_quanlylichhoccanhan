@@ -1,0 +1,58 @@
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CreateScheduleDto = void 0;
+const class_validator_1 = require("class-validator");
+const swagger_1 = require("@nestjs/swagger");
+const schedule_entity_1 = require("../entities/schedule.entity");
+class CreateScheduleDto {
+}
+exports.CreateScheduleDto = CreateScheduleDto;
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: 1 }),
+    (0, class_validator_1.IsInt)(),
+    __metadata("design:type", Number)
+], CreateScheduleDto.prototype, "course_id", void 0);
+__decorate([
+    (0, swagger_1.ApiPropertyOptional)({ enum: schedule_entity_1.ScheduleType, default: schedule_entity_1.ScheduleType.CLASS }),
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsEnum)(schedule_entity_1.ScheduleType),
+    __metadata("design:type", String)
+], CreateScheduleDto.prototype, "type", void 0);
+__decorate([
+    (0, swagger_1.ApiPropertyOptional)({ example: '2024-03-25' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], CreateScheduleDto.prototype, "date", void 0);
+__decorate([
+    (0, swagger_1.ApiPropertyOptional)({ example: 2, description: '0=CN, 1=T2, 2=T3...' }),
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsInt)(),
+    __metadata("design:type", Number)
+], CreateScheduleDto.prototype, "day_of_week", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: '08:00' }),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], CreateScheduleDto.prototype, "start_time", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({ example: '10:00' }),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], CreateScheduleDto.prototype, "end_time", void 0);
+__decorate([
+    (0, swagger_1.ApiPropertyOptional)({ default: false }),
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsBoolean)(),
+    __metadata("design:type", Boolean)
+], CreateScheduleDto.prototype, "repeat", void 0);
+//# sourceMappingURL=create-schedule.dto.js.map
