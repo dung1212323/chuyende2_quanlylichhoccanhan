@@ -1,3 +1,1 @@
-# course_tracker
-
-A new Flutter project.
+course_tracker A new Flutter project.
